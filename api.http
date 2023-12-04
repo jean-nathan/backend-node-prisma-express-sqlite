@@ -1,0 +1,18 @@
+### Create
+
+POST http://localhost:8080/category
+Content-Type: application/json
+
+{
+  "name": "Telefonia",
+}
+
+### Create
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+  "bar_code": "00028",
+  "name": "Lapis",
+  "price": 10.99
+}

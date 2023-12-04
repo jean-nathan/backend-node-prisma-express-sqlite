@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js" // Provedor do Prisma Client usado.
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_STORAGE_PATH")
+}
+
+model Product {
+  id              String            @id @default(uuid()) // Chave primária gerada automaticamente.
+  name            String
+  bar_code        String            @unique // Valor único em todos os registros.
+  price           Decimal
+  created_at      DateTime          @default(now()) // Valor automático da data e hora de criação.
+  ProductCategory ProductCategory[]
+
+  @@map("products") // Nome personalizado da tabela no banco de dados.
+}
+
+model Category {
+  id              String            @id @default(uuid())
+  name            String
+  created_at      DateTime          @default(now())
+  ProductCategory ProductCategory[]
+
+  @@map("categories")
+}
+
+model ProductCategory {
+  id          String   @id @default(uuid())
+  id_product  String
+  product     Product  @relation(fields: [id_product], references: [id])
+  id_category String
+  category    Category @relation(fields: [id_category], references: [id])
+  created_at  DateTime @default(now())
+
+  @@map("products_categories")
+}

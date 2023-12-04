@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "sourceMap": true /* Habilita o uso do Dev Tools */,
+    "outDir": "dist",
+    "strict": true /* habilita um conjunto de opções estritas no TypeScript, o que aumenta a rigorosidade das verificações do compilador e ajuda a melhorar a qualidade e a segurança do código TypeScript */,
+    "lib": [
+      "esnext"
+    ] /* você está permitindo que seu código TypeScript acesse as funcionalidades e recursos mais recentes e planejados do ECMAScript */,
+    "esModuleInterop": true /* Com o esModuleInterop ativado, você pode misturar e combinar os dois sistemas de módulos de forma mais fácil. Isso significa que você pode usar a sintaxe moderna ES6 import e export mesmo quando estiver trabalhando com código que usa a sintaxe antiga CommonJS require e module.exports */
+  }
+}
